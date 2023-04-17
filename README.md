@@ -9,39 +9,55 @@
     <br />
 </div>
 
+# Topologi Project
+<div align="center">
+<img src="img/project-aws4.jpg" alt="Logo" width="500">
+</div>
+
+Berikut beberapa service AWS yang saya gunakan :
+
+- **Elastic Block Store (EBS)**
+- **Elastic File System (EFS)**
+- **Virtual Private Cloud (VPC)**
+- **Elastic Compute Cloud (EC2)**
+- **Relational Database Service (RDS)**
+
 # Kasus
 <p align="center">
-    
     Anda mendapatkan project untuk membuat 2 web (statis dan dinamis)
-
 </p>
 
 # Goal
-<p align="center">
-    
-    1. User dapat membuat web dinamis di instance Ubuntu
-    
-    2. User dapat membuat web statis di instance Debian
-    
-    3. User dapat menghubungkan web dinamis dengan database
-    
-    4. User dapat membuat direktori dan file di masing-masing EBS
-    
-    5. Kedua EC2 (Debian dan Ubuntu) dapat terhubung ke EFS
-</p>
+-    **User dapat membuat web dinamis di instance Ubuntu**
+-    **User dapat membuat web statis di instance Debian**
+-    **User dapat menghubungkan web dinamis dengan database**
+-    **User dapat membuat direktori dan file di masing-masing EBS**
+-    **Kedua EC2 (Debian dan Ubuntu) dapat terhubung ke EFS**
 
 # Ketentuan
-<p align="center">
-    
-    1. Website diupload di Github
+- **Website diupload di Github**
+- Membuat dua instance dengan OS yang berbeda
+- Instance 1 menggunakan OS Ubuntu 
+- Instance 2 menggunakan OS Debian
+- Name tag EC2 : WebServer_Ubuntu dan WebServer_Debian
+IP VPC : 192.168.1.0/25  
 
-    2. Membuat dua instance dengan OS yang berbeda
+Subnet Public 1    :  192.168.1.0/27 
 
-    3. Instance 1 menggunakan OS Ubuntu
+Subnet Private 1  :  192.168.1.32/27
 
-    4. Instance 2 menggunakan OS Debian
+Subnet Public 2    :  192.168.1.64/27
 
-</p>
+Subnet Private 2  :  192.168.1.96/27
+
+- Membuat 2 EBS Volume untuk di mount di masing-masing instance
+- Name tag EBS : Volume_Ubuntu dan Volume_Debian
+- User dapat membuat direktori dan file txt di masing-masing EBS
+- Nama direktori : ebs-ubuntu dengan file ubuntu.txt dan ebs-debian dengan file ubuntu.txt
+- Kedua EC2 (Ubuntu dan Debian) dapat terhubung ke EFS (ditest dengan cara membuat direktori dari kedua instance)
+- Rsync isi dir web dinamis /var/www/html ke ebs
+- Rsync isi /var/log ke efs
+
 
 # Topologi Project
 <div align="center">
