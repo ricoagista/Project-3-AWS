@@ -22,9 +22,7 @@
 - **Relational Database Service (RDS)**
 
 # Kasus
-<p align="center">
-    <strong>Anda mendapatkan project untuk membuat 2 web (statis dan dinamis)</strong>
-</p>
+**Anda mendapatkan project untuk membuat 2 web (statis dan dinamis)**
 
 # Goal
 -    **User dapat membuat web dinamis di instance Ubuntu**
